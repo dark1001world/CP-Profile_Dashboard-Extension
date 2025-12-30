@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 280px;
+  padding: 10px;
+}
+
+h2 {
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 4px;
+}
+
+button {
+  width: 100%;
+  margin-top: 6px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+#stats p {
+  margin: 4px 0;
+}

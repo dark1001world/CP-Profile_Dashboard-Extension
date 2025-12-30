@@ -1,0 +1,22 @@
+{
+    "manifest_version":3,
+    "name":"CP Profile Dashboard",
+    "version":"1.0",
+    "description":"Get your codeforces, codechef and leetcode profile status at a single place on a single click. Your contest rating and problems solved. Will add further features",
+
+    "action":{
+        "default_popup":"popup.html"
+    },
+    "background":{
+        "service_worker":"background.js"
+    },
+    "permissions":[
+        "storage",
+        "alarms"
+    ],
+    "host_permissions":[
+        "https://codeforces.com/*",
+        "https://leetcode.com/*",
+        "https://www.codechef.com/*"
+    ]
+}
