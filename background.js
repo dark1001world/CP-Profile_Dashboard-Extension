@@ -1,4 +1,5 @@
 
+
 async function getUsers() {
   const res = await chrome.storage.local.get("users");
   return res.users;
@@ -65,8 +66,11 @@ async function refreshStats() {
         updatedAt: Date.now()
       }
     });
-
     console.log("Stats updated:", data);
+    chrome.runtime.sendMessage({
+      type:"STATS_DONE",
+      data
+    });
   } catch (e) {
     console.error("Failed to refresh stats:", e);
   }
@@ -74,12 +78,12 @@ async function refreshStats() {
 
 chrome.runtime.onMessage.addListener((msg) => {
   if (msg.type === "REFRESH_STATS") {
-    refreshStats(); // fire and forget
+    refreshStats(); 
   }
 });
 chrome.runtime.onInstalled.addListener(() => {
   chrome.alarms.create("refreshStats", {
-    periodInMinutes: 60 // every 1 hour
+    periodInMinutes: 60 
   });
 });
 chrome.alarms.onAlarm.addListener((alarm) => {

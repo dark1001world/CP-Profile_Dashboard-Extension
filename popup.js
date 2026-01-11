@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setup.style.display = "none";
   dashboard.style.display = "block";
 
-  if (res.stats?.data) {
+  if ((res.stats?.data)) {
     renderStats(res.stats.data);
   } else {
     statsDiv.textContent = "Loading...";
@@ -60,8 +60,12 @@ saveBtn.onclick = async () => {
 
   api.runtime.sendMessage({ type: "REFRESH_STATS" });
 };
+api.runtime.onMessage.addListener((msg) => {
+  if(msg.type==="STATS_DONE"){
+    renderStats(msg.data);
+  }
+});
 
-// ---------- edit ----------
 editBtn.onclick = () => {
   dashboard.style.display = "none";
   setup.style.display = "block";
