@@ -1,26 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  width: 280px;
-  padding: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #581c87 50%, #0f172a 100%);
+  min-height: 320px;
+  padding: 0.75rem;
+  margin: 0;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
 }
 
 h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
   text-align: center;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(to right, #c084fc, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 0.5rem;
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #d8b4fe;
+  margin-bottom: 0.35rem;
 }
 
 input {
   width: 100%;
-  margin-bottom: 6px;
-  padding: 4px;
+  padding: 0.5rem 0.875rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+input::placeholder {
+  color: #9ca3af;
+}
+
+input:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #a855f7;
 }
 
 button {
   width: 100%;
-  margin-top: 6px;
-  padding: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 0.5rem;
   cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 0.625rem;
 }
 
-#stats p {
-  margin: 4px 0;
+#save {
+  background: linear-gradient(to right, #9333ea, #db2777);
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(147, 51, 234, 0.3);
+}
+
+#save:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px -3px rgba(147, 51, 234, 0.5);
+}
+
+#save:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.5);
+}
+
+#edit {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+#edit:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+#edit:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.5);
+}
+
+#stats {
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #d8b4fe;
+  margin-bottom: 0.2rem;
+}
+
+.stat-value {
+  font-size: 1rem;
+  font-weight: 600;
 }

@@ -1,5 +1,3 @@
-
-
 async function getUsers() {
   const res = await chrome.storage.local.get("users");
   return res.users;

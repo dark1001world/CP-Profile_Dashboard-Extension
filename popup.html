@@ -3,26 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <title>CP Profile Dashboard</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <h2>CP Profile Dashboard</h2>
-
-  <!-- SETUP -->
-  <div id="setup" style="display:none;">
-    <input id="cf" placeholder="Codeforces ID" />
-    <input id="lc" placeholder="LeetCode ID" />
-    <input id="cc" placeholder="CodeChef ID" />
-    <button id="save">Save</button>
+  <div class="container">
+    <h2>CP Profile Dashboard</h2>
+    
+    <!-- SETUP -->
+    <div id="setup" class="card">
+      <div class="form-group">
+        <label for="cf">Codeforces ID</label>
+        <input id="cf" placeholder="Enter your Codeforces username" />
+      </div>
+      
+      <div class="form-group">
+        <label for="lc">LeetCode ID</label>
+        <input id="lc" placeholder="Enter your LeetCode username" />
+      </div>
+      
+      <div class="form-group">
+        <label for="cc">CodeChef ID</label>
+        <input id="cc" placeholder="Enter your CodeChef username" />
+      </div>
+      
+      <button id="save">Save Profiles</button>
+    </div>
+    
+    <!-- DASHBOARD -->
+    <div id="dashboard" style="display:none;" class="card">
+      <div id="stats">
+      </div>
+      <button id="edit">Edit Profile IDs</button>
+    </div>
   </div>
-
-  <!-- DASHBOARD -->
-  <div id="dashboard" style="display:none;">
-    <div id="stats"></div>
-    <button id="edit">Edit IDs</button>
-  </div>
-
+  
   <script src="popup.js"></script>
 </body>
 </html>

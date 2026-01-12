@@ -1,4 +1,4 @@
-const api = chrome; // MV3 is chrome-first
+const api = chrome; 
 
 const setup = document.getElementById("setup");
 const dashboard = document.getElementById("dashboard");
@@ -11,7 +11,7 @@ const ccInput = document.getElementById("cc");
 const saveBtn = document.getElementById("save");
 const editBtn = document.getElementById("edit");
 
-// ---------- render ----------
+// render 
 function renderStats(data) {
   statsDiv.innerHTML = "";
   for (const key in data) {
@@ -21,7 +21,7 @@ function renderStats(data) {
   }
 }
 
-// ---------- on popup open ----------
+// on popup open
 document.addEventListener("DOMContentLoaded", async () => {
   const res = await api.storage.local.get(["users", "stats"]);
 
@@ -40,11 +40,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     statsDiv.textContent = "Loading...";
   }
 
-  // 🔥 fire-and-forget refresh
   api.runtime.sendMessage({ type: "REFRESH_STATS" });
 });
 
-// ---------- save usernames ----------
 saveBtn.onclick = async () => {
   const users = {
     codeforces: cfInput.value.trim(),
